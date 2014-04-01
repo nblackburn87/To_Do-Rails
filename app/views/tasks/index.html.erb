@@ -3,13 +3,13 @@
 <ul>
   <% @tasks.each do |task| %>
     <li><h3><%= task.description %></h3>
-      <input type="button" style="width: 60px" value="Edit"><p><a href="/tasks/<%= task.id %>/edit"></a></p></input>
-      <input type="button" style="width: 60px" value="Delete"><p><a href="/tasks/<%= task.id %>"
+      <a href="/tasks/<%= task.id %>/edit"><input type="button" style="width: 60px" value="Edit"></input></a>
+      <a href="/tasks/<%= task.id %>"
         data-confirm="Are you sure?"
         data-method="delete"
-        rel="nofollow>"></a></p></input>
+        rel="nofollow>"><input type="button" style="width: 60px" value="Delete"></input></a>
     </li>
   <% end %>
 </ul>
 
-<input type="button" style="width: 200px" value="New Task" method="get"><p><a href="/tasks/new"></a></p></input>
+<a href="/tasks/new"><input type="button" style="width: 200px" value="New Task"></input></a>

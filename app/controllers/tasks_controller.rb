@@ -42,6 +42,10 @@ class TasksController < ApplicationController
 
   def mark
     @task = Task.find(params[:id])
-
+    if @task.mark(:done => params[:true])
+      redirect_to "/"
+    else
+      render('tasks/edit.html.erb')
+    end
   end
 end
